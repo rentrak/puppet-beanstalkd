@@ -104,6 +104,9 @@ case "$1" in
 			ulimit -n $BEANSTALKD_MAXCONNECTIONS
 		fi
 
+		DAEMON_OPTS="-l $BEANSTALKD_LISTEN_ADDR -p $BEANSTALKD_LISTEN_PORT"
+		DAEMON_OPTS="$options"
+
 	;;
 	*)
 		#nothing, please keep moving
@@ -112,19 +115,7 @@ esac
 
 
 
-
-
-
-####
-
-##now take all of that and make something the deb init will like
-
 DAEMONUSER=$BEANSTALKD_USER
-
-DAEMON_OPTS="-l $BEANSTALKD_LISTEN_ADDR -p $BEANSTALKD_LISTEN_PORT"
-echo "setting options to $DAEMON_OPTS"
-DAEMON_OPTS="$options"
-echo "setting options to $DAEMON_OPTS"
 
 
 ## Uncomment to enable startup during boot.
