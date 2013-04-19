@@ -21,7 +21,7 @@ define beanstalkd::config ( #name
 	$listenport='13000',
 	$maxjobsize='65535',
 	$maxconnections='1024',						## results in open file limit
-	$binlogdir='/var/lib/beanstalkd/binlog',
+	$binlogdir='/var/lib/beanstalkd/binlog',	## set empty ( '' ) to disable binlog
 	$binlogfsync=undef,							## unset = no explicit fsync
 	$binlogsize='10485760',
 	#
