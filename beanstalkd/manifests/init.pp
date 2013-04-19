@@ -1,16 +1,20 @@
 
+#usage: 
+#
+#	beanstalkd::config { name:
+#		listenaddress => '0.0.0.0',
+#		listenport => '13000',
+#		maxjobsize => '65535',
+#		maxconnections => '1024',
+#		binlogdir => '/var/lib/beanstalkd/binlog',
+#		binlogfsync => undef,							
+#		binlogsize => '10485760',
+#		ensure => 'running',			# running, stopped, absent
+#		packageversion => 'latest',		# latest, present, or specific version
+#		packagename => undef,			# override package name	
+#		servicename => undef			# override service name
+#	}
 
-listenaddress => '0.0.0.0',
-listenport => '13000',
-maxjobsize => '65535',
-maxconnections => '1024',
-binlogdir => '/var/lib/beanstalkd/binlog',
-binlogfsync => undef,							
-binlogsize => '10485760',
-ensure => 'running',		# running, stopped, absent
-packageversion => 'latest',	# latest, present, or specific version
-packagename => undef,		# override package name						#got your own custom package?  override the default name/service here.
-servicename => undef		# override service name
 
 define beanstalkd::config ( #name
 	$listenaddress='0.0.0.0',
@@ -29,15 +33,13 @@ define beanstalkd::config ( #name
 
 	case $::operatingsystem {
 		ubuntu,debian: { 
-			fail("$::operatingsystem unsupported by $module_name - someone needs to setup the config template file")
-			#this is really just stubbed out, a debian user needs to fix this. :)
 			$defaultpackagename='beanstalkd'
 			$defaultservicename='beanstalkd'
 			$user='beanstalkd' 
-			$configfile="/etc/beanstalkd.conf" 
-			$configtemplate="$module_name/debian/beanstalkd_conf.erb"	#please create me!
-			$hasstatus=undef  #please fix me
-			$restart=undef	  #and me too
+			$configfile="/etc/default/beanstalkd" 
+			$configtemplate="$module_name/debian/beanstalkd_default.erb"	#please create me!
+			$hasstatus='true'
+			$restart='/etc/init.d/beanstalkd restart'
 		}
 		centos,redhat: { 
 			$defaultpackagename='beanstalkd'
