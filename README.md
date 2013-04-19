@@ -13,6 +13,8 @@ Requires packages (rpm, etc) with traditional init scripts supported by service{
 
 ## Basic Usage
 
+Drop the beanstalkd directory into your modules tree and realize the define:
+
 	beanstalkd::config{"my beanstalk install": }
 
 ## Optional parameters
