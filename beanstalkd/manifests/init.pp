@@ -62,14 +62,17 @@ define beanstalkd::config ( #name
 			$ourpackageversion='absent'
 			$serviceenable='false'
 			$serviceensure='stopped'		
+			$fileensure='absent'
 		}
 		running: {
 			$serviceenable='true'
 			$serviceensure='running'
+			$fileensure='present'
 		}
 		stopped: {
 			$serviceenable='false'
 			$serviceensure='stopped'
+			$fileensure='present'
 		}
 		default: {
 			fail("ERROR [$module_name]: enable must be one of: running stopped absent")		
@@ -104,6 +107,7 @@ define beanstalkd::config ( #name
 		owner => "root",
 		group => "root",
 		mode  => "644", 
+		ensure => "$fileensure",
 		require => Package["$ourpackagename"],
 	} 
 
