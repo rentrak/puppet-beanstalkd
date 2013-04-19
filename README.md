@@ -23,7 +23,7 @@ Drop the beanstalkd directory into your modules tree and realize the define:
 	listenport => '13000',
 	maxjobsize => '65535',
 	maxconnections => '1024',
-	binlogdir => '/var/lib/beanstalkd/binlog',	#set empty ( '' ) to disable binlog
+	binlogdir => '/var/lib/beanstalkd/binlog',	# set empty ( '' ) to disable binlog
 	binlogfsync => undef,							
 	binlogsize => '10485760',
 	ensure => 'running',		# running, stopped, absent
