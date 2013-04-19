@@ -1,7 +1,7 @@
 puppet-beanstalkd
 =================
 
-puppet module for managing beanstalkd - https://github.com/kr/beanstalkd
+puppet module for managing beanstalkd, a simple and fast work queue - https://github.com/kr/beanstalkd
 
 
 ## Supported OSes
