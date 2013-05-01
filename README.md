@@ -1,7 +1,6 @@
 puppet-beanstalkd
 =================
-[![Build Status](https://secure.travis-ci.org/keen99/puppet-beanstalkd.png)](http://travis-ci.org/keen99/puppet-beanstalkd)
-
+[![Build Status](https://travis-ci.org/keen99/puppet-beanstalkd.png?branch=master)](https://travis-ci.org/keen99/puppet-beanstalkd)
 
 puppet module for managing beanstalkd, a simple and fast work queue - https://github.com/kr/beanstalkd
 
