@@ -10,12 +10,9 @@ rvm:
 #  - rbx-19mode
 
 before_script: 
- - env
  - pwd
  - ls -al
- - cd beanstalkd
- - pwd
+ - gem list
 
- - ls -al
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
