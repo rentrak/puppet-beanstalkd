@@ -1,6 +1,7 @@
 env:
   global:
-    - CI_HOME=`pwd`/"beanstalkd"
+    - REPO="beanstalkd"
+    - CI_HOME=`pwd`/$REPO
 
 language: ruby
 rvm:
