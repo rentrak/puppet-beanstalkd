@@ -12,7 +12,7 @@ rvm:
 before_script: 
  - cd beanstalkd
  - bundle install
-
+ - bundle show
 
 script: 
  - bundle exec rake
