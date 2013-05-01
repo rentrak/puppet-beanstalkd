@@ -1,10 +1,18 @@
-
 language: ruby
 rvm:
   - "1.8.7"
   - "1.9.2"
   - "1.9.3"
   - ruby-head
+
+env:
+#find versions here https://rubygems.org/gems/puppet/versions
+  - PUPPET_VERSION=0.24.5
+  - PUPPET_VERSION=0.25.5
+  - PUPPET_VERSION=2.6.18
+  - PUPPET_VERSION=2.7.21
+  - PUPPET_VERSION=3.1.1
+ 
 
 before_script: 
  - cd beanstalkd
