@@ -10,6 +10,7 @@ rvm:
 #  - rbx-19mode
 
 before_script: 
+ - cd beanstalkd
  - pwd
  - ls -al
  - gem list
