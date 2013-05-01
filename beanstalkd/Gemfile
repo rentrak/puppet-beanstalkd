@@ -1,9 +1,9 @@
-group :test do
- gem rake
- gem rspec-expectations 
- gem rspec 
- gem facter
- gem puppet
- gem rspec-puppet 
- gem puppetlabs_spec_helper 
-end
+source :rubygems
+
+gem rake
+gem rspec-expectations 
+gem rspec 
+gem facter
+gem puppet
+gem rspec-puppet 
+gem puppetlabs_spec_helper 
