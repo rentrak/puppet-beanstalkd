@@ -11,9 +11,6 @@ rvm:
 
 before_script: 
  - cd beanstalkd
- - pwd
- - ls -al
- - gem list
 
 # uncomment this line if your project needs to run something other than `rake`:
 # script: bundle exec rspec spec
