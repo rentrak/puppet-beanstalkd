@@ -1,4 +1,4 @@
-include beanstalkd::params {
+class beanstalkd::params {
 
 
   case $::operatingsystem {
