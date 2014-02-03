@@ -1,14 +1,14 @@
 class beanstalkd (
-	$address        = beanstalkd::params::address,
-	$port           = beanstalkd::params::port,
-	$maxjobsize     = beanstalkd::params::maxjobsize,
-	$maxconnections = beanstalkd::params::maxconnections,
-	$binlogdir      = beanstalkd::params::binlogdir,
-	$binlogfsync    = beanstalkd::params::binlogfsync,
-	$binlogsize     = beanstalkd::params::binlogsize,
-	$version        = beanstalkd::params::version,
-	$package        = beanstalkd::params::package,
-	$service        = beanstalkd::params::service
+	$address        = $beanstalkd::params::address,
+	$port           = $beanstalkd::params::port,
+	$maxjobsize     = $beanstalkd::params::maxjobsize,
+	$maxconnections = $beanstalkd::params::maxconnections,
+	$binlogdir      = $beanstalkd::params::binlogdir,
+	$binlogfsync    = $beanstalkd::params::binlogfsync,
+	$binlogsize     = $beanstalkd::params::binlogsize,
+	$version        = $beanstalkd::params::version,
+	$package        = $beanstalkd::params::package,
+	$service        = $beanstalkd::params::service
 
 ) inherits beanstalkd::params {
 
