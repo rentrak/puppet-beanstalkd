@@ -10,8 +10,8 @@ BEANSTALKD_MAXCONNECTIONS=<%= @maxconnections %>
 <% end -%>
 
 
-BEANSTALKD_ADDR=<%= @listenaddress %>
-BEANSTALKD_PORT=<%= @listenport %>
+BEANSTALKD_ADDR=<%= @address %>
+BEANSTALKD_PORT=<%= @port %>
 BEANSTALKD_USER=<%= @user %>
 
 # Job size is left to the default. Uncomment and set it
@@ -62,13 +62,13 @@ case "$1" in
 	start|restart|force-reload|reload)
 		exec=$DAEMON
 		[ -x $exec ] || exit 5
-		
+
 		# if not running, start it up here, usually something like "daemon $exec"
 		options="-l ${BEANSTALKD_ADDR} -p ${BEANSTALKD_PORT} -u ${BEANSTALKD_USER}"
 		if [ "${BEANSTALKD_MAX_JOB_SIZE}" != ""  ]; then
 			options="${options} -z ${BEANSTALKD_MAX_JOB_SIZE}"
 		fi
-		
+
 		if [ "${BEANSTALKD_BINLOG_DIR}" != "" ]; then
 			if [ ! -d "${BEANSTALKD_BINLOG_DIR}" ]; then
 				echo "Creating binlog directory (${BEANSTALKD_BINLOG_DIR})"
@@ -83,7 +83,7 @@ case "$1" in
 			if [ "${BEANSTALKD_BINLOG_SIZE}" != "" ]; then
 				options="${options} -s ${BEANSTALKD_BINLOG_SIZE}"
 			fi
-		
+
 			##1.4.6 at least is prone to leave a lock file around after shutting down
 			##this breaks startup after upgrade to 1.5, so work around this
 			##unknown if this happens w/o binlog enabled...
@@ -97,7 +97,7 @@ case "$1" in
 				fi
 			fi
 		fi
-	
+
 		if [ -n "${BEANSTALKD_MAXCONNECTIONS}" ]; then
 			#increase open files ulimit to support higher concurrent connections
 			echo "increasing open file limit to $BEANSTALKD_MAXCONNECTIONS"
