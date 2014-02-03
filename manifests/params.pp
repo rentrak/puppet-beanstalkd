@@ -13,6 +13,7 @@ class beanstalkd::params {
     ubuntu, debian: {
       $package        = 'beanstalkd'
       $service        = 'beanstalkd'
+      $version        = 'latest'
       $user           = 'beanstalkd'
       $configfile     = '/etc/default/beanstalkd'
       $configtemplate = "${module_name}/debian/beanstalkd_default.erb"
@@ -23,6 +24,7 @@ class beanstalkd::params {
     centos, redhat: {
       $package        = 'beanstalkd'
       $service        = 'beanstalkd'
+      $version        = 'latest'
       $user           = 'beanstalkd'
       $configfile     = '/etc/sysconfig/beanstalkd'
       $configtemplate = "${module_name}/redhat/beanstalkd_sysconfig.erb"
