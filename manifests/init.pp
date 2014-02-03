@@ -25,7 +25,7 @@ class beanstalkd (
 
 	service { $service:
 		ensure    => 'running',
-		enabled   => true,
+		enable    => true,
 		hasstatus => $hasstatus,
 		restart   => $restart,
 		subscribe => [ Package[$package], File[$configfile] ],
