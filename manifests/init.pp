@@ -1,4 +1,4 @@
-class beanstalkd::config (
+class beanstalkd (
 	$address        = beanstalkd::params::address,
 	$port           = beanstalkd::params::port,
 	$maxjobsize     = beanstalkd::params::maxjobsize,
